@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree ../../../vendor/assets/stylesheets
+ *= require_tree . 
+*/
+@import "bootstrap";
+@import "css3buttons/without-reset";
+
+body {
+//  padding-top: 40px;
+//  background: #EEE;
+}
+header {
+  background-color: whiteSmoke;
+  padding: 20px 20px 10px;
+  border-bottom: 1px solid #DDD;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+#topmenu {
+  background-color: #EEE;
+  padding: 5px 0;
+  border-bottom: 1px solid #DDD;
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      float:left;
+      list-style: none;
+      padding-left: 3px;
+      
+      span {
+        font-size: 14px;
+        color: #404040;
+        display: block;
+        margin-top: 6px;
+      }
+      a {
+        display: block;
+        height: 32px;
+        width: 32px;
+        text-indent: -9999px;
+        
+        &.yahoo {
+          background-image: url(<%= asset_path 'yahoo_32.png' %>)
+        }
+        &.google {
+          background-image: url(<%= asset_path 'google_32.png' %>)
+        }
+        &.facebook {
+          background-image: url(<%= asset_path 'facebook_32.png' %>)
+        }
+      }
+    }
+  }
+  
+}
+#main {
+  border: {
+    left: 1px solid #EEE;
+    right: 1px solid #EEE;
+    bottom: 1px solid #EEE;
+  }
+  min-height: 500px;
+}
+
+.clear {
+  clear: both;
+}

@@ -20,11 +20,13 @@
     </header>
     <div id="container" class="container">
       <div class="row">
-        <article class="span16">
+        <aside class="span3"><%= yield :left_side %></aside>
+        <article class="span10">
           <div id="main" role="main">
             <%= yield %>
           </div>
         </article>
+        <aside class="span3"><%= yield :left_side %></aside>
       </div>
       <footer>
         &copy; Cungsothich 2012

@@ -31,3 +31,7 @@ gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "rails-footnotes", ">= 3.7", :group => :development
+gem 'bootstrap-sass', '1.4.1'
+gem 'settingslogic'
+gem 'jquery-rails'
+gem 'css3buttons'
