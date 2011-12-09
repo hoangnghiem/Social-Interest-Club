@@ -1,0 +1,27 @@
+<% content_for :js_required do %>false<% end %>
+<% content_for :include_like_box do %>true<% end %>
+
+<% content_for :left_side do %>
+  <div id="left-top-promo">
+    <%= link_to 'New Group', new_group_path %>
+  </div>
+  <div id="nav">
+    <ul>
+      <% Category.order("position").each do |category| %>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, category.name, :class => "name"), "" %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% content_for :right_side do %>
+<div id="like-box">
+  <div class="fb-like-box" data-href="http://www.facebook.com/pages/Myshoplocal/313744191969720" data-width="240" data-height="320" data-show-faces="true" data-border-color="#CCC" data-stream="false" data-header="false"></div>
+</div>
+<% end %>
+
+<div class="section-content">
+  <% @groups.each do |group| %>
+  <%= render :partial => "group", :locals => {:group => group} %>
+  <% end %>
+</div>

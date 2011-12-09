@@ -1,0 +1,7 @@
+vi:
+  activerecord:
+    models:
+      interest: "Sở thích"
+    attributes:
+      interest:
+        name: "Sở thích"

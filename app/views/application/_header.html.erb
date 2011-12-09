@@ -1,8 +1,16 @@
 <header>
   <div class="container">
+    <div class="pull-left">
+      <form id="search-form">
+        <input type="text" name="some_name" value="" id="search-query" placeholder="Nhap so thich hoac ten nhom">
+        <button class="button icon search" id="search"><span>Search</span></button>
+        <%= link_to "Home", root_url(:host => request.domain) %>
+      </form>
+    </div>
     <% if user_signed_in? %>
     <div class="button-group pull-right">
-      <a href="#" class="button primary"><%= current_user.name %></a>
+      <a href="#" class="button icon user primary"><%= current_user.name %></a>
+      <a href="#" class="button">Tin Nhan <strong>(1)</strong></a>
       <%= link_to t('common.sign_out'), destroy_user_session_path, :class => "button" %>
     </div>
     <% else %>

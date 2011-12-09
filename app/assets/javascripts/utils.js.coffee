@@ -21,14 +21,18 @@ UTIL =
     $body = $(document.body)
     controller = $.string($body.data("controller")).capitalize().str
     action = $.string($body.data("action")).capitalize().str
-    UTIL.exec(controller, action)
+    js_required = $body.data("js-required") is true
+    if (js_required)
+      UTIL.exec(controller, action)
     
 $ ->    
   UTIL.init()
   $("body > .topbar").scrollSpy()
   $(".tabs").tabs()
   $("a[rel=twipsy]").twipsy live: true
+  $("span[rel=twipsy]").twipsy live: true
   $("a[rel=popover]").popover offset: 10
+  $("input[rel=popover], textarea[rel=popover], select[rel=popover]").popover offset: 10, template: '<div class="arrow"></div><div class="inner"><div class="content"><p></p></div></div>'
   $(".topbar").dropdown()
   $(".alert-message").alert()
   domModal = $(".modal").modal(

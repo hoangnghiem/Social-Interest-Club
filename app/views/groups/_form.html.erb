@@ -1,0 +1,36 @@
+<%= simple_form_for(@group, :wrapper => :inline, :html => {:id => "group-form"}) do |f| %>
+  <h5>Thong tin chung</h5>
+  <%= f.input :name, :input_html => { :rel => "popover", "data-content" => "Nhap ten nhom" } %>
+  <%= f.association :category, :label => t('activerecord.models.category'), :input_html => { :rel => "popover", "data-content" => "Chon chuyen muc phu hop voi nhom" } %>
+  <%= f.input :about, :as => :text, :input_html => {:rows => "5", :rel => "popover", "data-content" => "Nhap loi gioi thieu ngan ngon ve nhom"} %>
+  <%= f.input :interest_tokens, :input_html => {:id => "interests"}, :label => t('activerecord.models.interest') %>
+  <h5>Ten mien</h5>
+  <% if @group.new_record? %>
+  <%= f.input :subdomain, :label => "http://", :wrapper_class => "clearfix domain", :hint => ".cungsothich.com",:input_html => { :rel => "popover", "data-content" => "Day la duong link chinh thuc toi nhom cua ban. Sau khi tao nhom, ban se khong the thay doi duoc ten mien nay." } %>
+  <% else %>
+    <%= link_to "http://#{@group.subdomain}.cungsothich.com", "http://#{@group.subdomain}.cungsothich.com" %>
+  <% end %>
+  
+  <h5>Chinh sach rieng tu</h5>
+  <div class="input">
+    <ul class="inputs-list">
+      <li>
+        <label>
+          <%= f.radio_button :public, true %>
+          <span>Ai cung co the tham gia</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <%= f.radio_button :public, false %>
+          <span>Toi dong y moi duoc tham gia</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="actions">
+    <input type="submit" value="Create group" class="btn success">
+    <%= link_to "Quay lai", :back, :class => "btn" %>
+  </div>
+<% end %>

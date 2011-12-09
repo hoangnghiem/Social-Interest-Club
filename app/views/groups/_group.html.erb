@@ -1,0 +1,26 @@
+<article class="group">
+  <header>
+    <% if group.public %>
+    <span class="access"><%= image_tag('icon-public.png', :width => "24px", :height => "24px") %></span>
+    <% else %>
+    <span class="access" rel="twipsy" title="Truong nhom dong y ban moi duoc tham gia" data-placement="right"><%= image_tag('icon-private.png', :width => "24px", :height => "24px") %></span>
+    <% end %>
+    <div class="title">
+      <strong><%= group.admin.name %></strong>
+      <span>tao cach day</span>
+      <span><%= distance_of_time_in_words(group.created_at, Time.now) %></span>
+    </div>
+  </header>
+  <div class="content">
+    <div class="group-logo pull-left">
+      <%= image_tag('group_logo.jpg', :width => "100px") %>
+    </div>
+    <div class="group-info pull-left">
+      <h4><%= link_to group.name, root_url(:subdomain => group.subdomain) %></h4>
+      <p class="about"><%= group.about %></p>
+      <div class="pull-left"><strong><%= group.members.size %></strong> thanh vien</div>
+      <div class="pull-right"><a href="" class="button icon add primary">Tham gia</a></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</article>

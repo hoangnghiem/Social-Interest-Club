@@ -1,0 +1,8 @@
+vi:
+  activerecord:
+    models:
+      category: "Chuyên mục"
+    attributes:
+      category:
+        name: "Tên chuyên mục"
+        order: "Thứ tự"

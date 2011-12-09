@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    models:
+      group: "Nhóm"
+    attributes:
+      group:
+        name: "Tên nhóm"
+        about: "Giới thiệu"
+        subdomain: "Tên miền"

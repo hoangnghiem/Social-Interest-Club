@@ -1,0 +1,183 @@
+body {
+  background: url(<%= asset_path 'bg.png' %>) repeat;
+}
+header {
+  padding: 15px 0;
+  
+  #search-form {
+    margin: 0;
+  
+    #search-query {
+      width: 300px;
+    }
+    #search {
+      span {
+        text-indent: -9999px;
+        display: block;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      float:left;
+      list-style: none;
+      padding-left: 3px;
+      
+      span {
+        font-size: 14px;
+        color: #404040;
+        display: block;
+        margin-top: 6px;
+      }
+      a.icon {
+        display: block;
+        height: 32px;
+        width: 32px;
+        text-indent: -9999px;
+        
+        &.yahoo {
+          background-image: url(<%= asset_path 'yahoo_32.png' %>)
+        }
+        &.google {
+          background-image: url(<%= asset_path 'google_32.png' %>)
+        }
+        &.facebook {
+          background-image: url(<%= asset_path 'facebook_32.png' %>)
+        }
+      }
+    }
+  }
+  
+}
+.section-content {
+  background: #FFF;
+  min-height: 400px;
+}
+.section-header {
+  background: #383838;
+  color: #fff;
+  //background-image: linear-gradient(to bottom,#666666 0,#000000 100%);
+  //background-image: -webkit-linear-gradient(top,#666666 0,#000000 100%);
+  //background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#666666),color-stop(100%,#000000));
+  //background-image: -o-linear-gradient(top,#666666 0,#000000 100%);
+  //background-image: -ms-linear-gradient(top,#666666 0,#000000 100%);
+  //background-image: -moz-linear-gradient(top,#666666 0,#000000 100%);
+  //filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#666666,EndColorStr=#000000);
+  
+  h6 {
+    color: #fff;
+    padding: 0 20px;
+  }
+}
+
+// ONE COLUMN LAYOUT
+// =================
+#one-column {
+  #content {
+    padding: 20px;
+  }
+}
+
+// THREE COLUMNS LAYOUT
+// =================
+$left_side_width: 200px;
+$right_side_width: 240px;
+$column_padding: 10px;
+$main-width: 940px - ($column_padding * 2) -($left_side_width + $right_side_width);
+
+#three-columns {
+  #page {
+    overflow: hidden;
+    position: relative;
+  }
+  #left-side {
+    width: $left_side_width;
+    float: left;
+    
+    #nav {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+          border: {
+            top: 1px solid #323232;
+            bottom: 1px solid #1B1B1B;
+          }
+          
+          a {
+            display: block;
+            min-height: 28px;
+            line-height: 28px;
+            position: relative;
+            padding: 0 5px 0 10px;
+            background: #272727;
+            color: #999;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 11px;
+            border-right: 4px solid transparent;
+            
+            &:hover {
+              border-right: 4px solid #6A6A6A;
+              background: #000;
+              color: #EEE;
+              font-weight: bold;
+            }
+            
+            .thumb {
+              display: inline-block;
+              margin-right: 8px;
+              vertical-align: middle;
+              
+              img {
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                margin-top: 8px;
+              }
+            }
+            .name {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+  #left-side-background {
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #272727;
+  }
+  #main {
+    width: $main-width;
+    float: left;
+    margin-right: $column_padding;
+    margin-left: $column_padding;
+    background: transparent;
+  }
+  #main-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: $left_side_width + $column_padding;
+    width: $main-width;
+    height: 100%;
+    background: #FFF;
+  }
+  #right-side {
+    width: $right_side_width;
+    float: left;
+  }
+}
+

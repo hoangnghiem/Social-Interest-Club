@@ -35,3 +35,9 @@ gem 'bootstrap-sass', '1.4.1'
 gem 'settingslogic'
 gem 'jquery-rails'
 gem 'css3buttons'
+gem 'devise'
+gem "omniauth-facebook"
+gem 'omniauth-openid'
+gem "mongrel", '>= 1.2.0.pre2', :group => :development
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem "faker"

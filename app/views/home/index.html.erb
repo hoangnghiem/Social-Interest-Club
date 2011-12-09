@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
+<% content_for :content_header do %>
+<h6>Home#index</h6>
+<% end %>
+
 <p>Find me in app/views/home/index.html.erb</p>
+
+<%= link_to "Create group", new_group_path, :class => "btn primary" %>
+<%= link_to "list group", groups_path, :class => "btn primary" %>

@@ -11,26 +11,30 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="<%= params[:controller] %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
-    <%= render :partial => "topbar" %>
-    <header>
-      <div class="container">
-        <h1>Search box</h1>
-      </div>
-    </header>
+  <body id="three-columns" class="<% if content_for?(:body_class) %><%= yield(:body_class) %><% else %><%= controller_name %><% end %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>" data-js-required="<% if content_for?(:js_required) %><%= yield :js_required %><% else %>true<% end %>">
+    <% if content_for?(:include_like_box) %>
+      <%= render :partial => "facebook_sdk" %>
+    <% end %>
+    <%= render :partial => "flashs" %>
+    <%= render :partial => "header" %>
     <div id="container" class="container">
       <div class="row">
-        <aside class="span3"><%= yield :left_side %></aside>
-        <article class="span10">
-          <div id="main" role="main">
-            <%= yield %>
+        <div class="span16" id="page">
+          <div id="left-side">
+            <%= yield :left_side %>
+            <div id="left-side-background"></div>
           </div>
-        </article>
-        <aside class="span3"><%= yield :left_side %></aside>
+          <div id="main">
+            <%= yield %>
+            <div id="main-background"></div>
+          </div>
+          <div id="right-side">
+            <%= yield :right_side %>
+            <div id="right-side-background"></div>
+          </div>
+        </div>
       </div>
-      <footer>
-        &copy; Cungsothich 2012
-      </footer>
-    </div> <!--! end of #container -->
+      <%= render :partial => "footer" %>     
+      </div> <!--! end of #container -->
   </body>
 </html>

@@ -11,24 +11,23 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="<%= params[:controller] %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
-    <%= render :partial => "topbar" %>
-    <header>
-      <div class="container">
-        <h1>Search box</h1>
-      </div>
-    </header>
+  <body id="one-column" class="<% if content_for?(:body_class) %><%= yield(:body_class) %><% else %><%= controller_name %><% end %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>" data-js-required="<% if content_for?(:js_required) %><%= yield :js_required %><% else %>true<% end %>">
+    <%= render :partial => "flashs" %>
+    <%= render :partial => "header" %>
     <div id="container" class="container">
       <div class="row">
-        <article class="span16">
-          <div id="main" role="main">
+        <div class="span16">
+          <% if content_for?(:content_header) %>
+          <div class="section-header">
+            <%= yield :content_header %>
+          </div>
+          <% end %>
+          <div id="content" class="section-content">
             <%= yield %>
           </div>
-        </article>
+        </div>
       </div>
-      <footer>
-        &copy; Cungsothich 2012
-      </footer>
+    <%= render :partial => "footer" %>  
     </div> <!--! end of #container -->
   </body>
 </html>

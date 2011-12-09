@@ -1,6 +1,17 @@
 Cungsothich::Application.routes.draw do
-  root :to => 'home#index'
+  
+  constraints(Subdomain) do
+    root :to => "groups#show"
+  end
 
+  constraints(NonSubdomain) do  
+    resources :groups, :except => [:show]
+    devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
+      get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session 
+    end
+    root :to => 'home#index'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

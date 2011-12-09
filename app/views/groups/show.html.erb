@@ -1,0 +1,144 @@
+<% content_for :body_class do %>groups show<% end %> 
+<% content_for :js_required do %>false<% end %>
+<% content_for :left_side do %>
+  <div id="group-box">
+    <div class="name"><%= @group.name %></div>
+    <div class="logo"><%= image_tag('group_logo.jpg', :width => "178") %></div>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Trang Chu", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Bai viet", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Thao Luan", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Su Kien", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Albums", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Videos", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Thong Bao", :class => "name"), "" %></li>
+      <li><%= link_to content_tag(:span, image_tag('icon_star.png'), :class => "thumb") + content_tag(:span, "Thanh Vien", :class => "name"), "" %></li>
+    </ul>
+  </div>
+<% end %>
+
+<% content_for :right_side do %>
+<div id="join">
+  <a href="" class="button">Tham Gia</a>
+</div>
+<section id="members">
+  <header>
+    <strong>Thanh Vien</strong>
+  </header>
+  <div class="photos">
+    <% 4.times do %>
+    <a href="" class="photo" rel="twipsy" title="User 1" data-placement="below"><%= image_tag('avatar.jpeg') %></a>
+    <a href="" class="photo" rel="twipsy" title="User 1" data-placement="below"><%= image_tag('avatar.jpeg') %></a>
+    <a href="" class="photo" rel="twipsy" title="User 1" data-placement="below"><%= image_tag('avatar.jpeg') %></a>
+    <a href="" class="photo" rel="twipsy" title="User 1" data-placement="below"><%= image_tag('avatar.jpeg') %></a>
+    <a href="" class="photo last" rel="twipsy" title="User 1" data-placement="below"><%= image_tag('avatar.jpeg') %></a>
+    <% end %>
+  </div>
+</section>
+<section id="notification">
+  <header>
+    <strong>Su Kien</strong>
+  </header>
+  <article>
+    <header>Nhom <%= @group.name %> duoc thanh lap vao luc 6:30 ngay 12/12/2012</header>
+  </article>
+  
+</section>
+<% end %>
+
+<section id="notification">
+  <header>
+    <strong>Thong Bao</strong>
+  </header>
+  <div id="articles">
+    <article>
+      <header>
+        <div class="poster pull-left">
+          <%= image_tag('avatar.jpeg') %>
+        </div>
+        <div class="pull-left title">
+          <a href=""><strong>Eros pid dis adipiscing integer placerat urna</strong></a>
+          <p>Dang boi Hoang Nghiem vao luc 6:30 ngay 12/12/1212</p>
+        </div>
+        <div class="clear"></div>
+      </header>
+      <p>Eros pid dis adipiscing integer placerat urna! Augue lacus hac ridiculus nisi. Dignissim habitasse a natoque ac tincidunt, velit proin scelerisque lectus.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="blogs">
+  <header>
+    <strong>Bai viet moi nhat</strong>
+  </header>
+  <div id="articles">
+    <article>
+      <header>
+        <div class="poster pull-left">
+          <%= image_tag('avatar.jpeg') %>
+        </div>
+        <div class="pull-left title">
+          <a href=""><strong>Eros pid dis adipiscing integer placerat urna</strong></a>
+          <p>Dang boi Hoang Nghiem vao luc 6:30 ngay 12/12/1212</p>
+        </div>
+        <div class="clear"></div>
+      </header>
+      <p>Eros pid dis adipiscing integer placerat urna! Augue lacus hac ridiculus nisi. Dignissim habitasse a natoque ac tincidunt, velit proin scelerisque lectus.
+      </p>
+    </article>
+    <article>
+      <header>
+        <div class="poster pull-left">
+          <%= image_tag('avatar.jpeg') %>
+        </div>
+        <div class="pull-left title">
+          <a href=""><strong>Eros pid dis adipiscing integer placerat urna</strong></a>
+          <p>Dang boi Hoang Nghiem vao luc 6:30 ngay 12/12/1212</p>
+        </div>
+        <div class="clear"></div>
+      </header>
+      <p>Eros pid dis adipiscing integer placerat urna! Augue lacus hac ridiculus nisi. Dignissim habitasse a natoque ac tincidunt, velit proin scelerisque lectus.
+      </p>
+    </article>
+    
+  </div>
+</section>
+
+<section id="discussions" class="last">
+  <header>
+    <strong>Thao Luan</strong>
+  </header>
+  <div id="articles">
+    <article>
+      <header>
+        <div class="poster pull-left">
+          <%= image_tag('avatar.jpeg') %>
+        </div>
+        <div class="pull-left title">
+          <a href=""><strong>Eros pid dis adipiscing integer placerat urna</strong></a>
+          <p>Dang boi Hoang Nghiem vao luc 6:30 ngay 12/12/1212</p>
+        </div>
+        <div class="clear"></div>
+      </header>
+      <p>Eros pid dis adipiscing integer placerat urna! Augue lacus hac ridiculus nisi. Dignissim habitasse a natoque ac tincidunt, velit proin scelerisque lectus.
+      </p>
+    </article>
+    <article>
+      <header>
+        <div class="poster pull-left">
+          <%= image_tag('avatar.jpeg') %>
+        </div>
+        <div class="pull-left title">
+          <a href=""><strong>Eros pid dis adipiscing integer placerat urna</strong></a>
+          <p>Dang boi Hoang Nghiem vao luc 6:30 ngay 12/12/1212</p>
+        </div>
+        <div class="clear"></div>
+      </header>
+      <p>Eros pid dis adipiscing integer placerat urna! Augue lacus hac ridiculus nisi. Dignissim habitasse a natoque ac tincidunt, velit proin scelerisque lectus.
+      </p>
+    </article>
+  </div>
+</section>
